@@ -1,4 +1,12 @@
-import { Button, Stack, Box, Typography, AppBar, Toolbar } from "@mui/material";
+import {
+  Button,
+  Stack,
+  Box,
+  Typography,
+  AppBar,
+  Toolbar,
+  Grid,
+} from "@mui/material";
 import DeleteIcon from "@mui/icons-material/Delete";
 import SendIcon from "@mui/icons-material/Send";
 import "./App.css";
@@ -28,6 +36,24 @@ function App() {
           500, and 700 font weights.
         </Typography>
       </Box>
+      <Grid container p={5} spacing={5}>
+        <Grid item xs={4}>
+          <Typography paragraph={true} align="justify">
+            Fontsource can be configured to load specific subsets, weights and
+            styles. MUI default typography configuration only relies on 300,
+            400, 500, and 700 font weights.
+          </Typography>
+        </Grid>
+        <Grid item xs={8}>
+          <Typography paragraph={true} align="justify">
+            Fontsource can be configured to load specific subsets, weights and
+            styles. MUI default typography configuration only relies on 300,
+            400, 500, and 700 font weights. Fontsource can be configured to load
+            specific subsets, weights and styles. MUI default typography
+            configuration only relies on 300, 400, 500, and 700 font weights.
+          </Typography>
+        </Grid>
+      </Grid>
       <Stack direction="row" spacing={5} pt={5} pl={5}>
         <Button variant="text">Click me</Button>
         <Button variant="contained">Submit</Button>
