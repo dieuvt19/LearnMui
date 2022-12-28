@@ -1,4 +1,4 @@
-import { Button, Stack, Box, Typography } from "@mui/material";
+import { Button, Stack, Box, Typography, AppBar, Toolbar } from "@mui/material";
 import DeleteIcon from "@mui/icons-material/Delete";
 import SendIcon from "@mui/icons-material/Send";
 import "./App.css";
@@ -6,6 +6,15 @@ import "./App.css";
 function App() {
   return (
     <div className="App">
+      <AppBar position="static">
+        <Toolbar>
+          <Typography variant="h5" sx={{ flexGrow: 1 }} align="left">
+            MUI-5
+          </Typography>
+          <Button color="inherit">Login</Button>
+          <Button color="inherit">Signup</Button>
+        </Toolbar>
+      </AppBar>
       <Box mt={5}>
         <Typography variant="h1" gutterBottom>
           MUI-5 App
