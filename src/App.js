@@ -9,6 +9,12 @@ import {
   Accordion,
   AccordionSummary,
   AccordionDetails,
+  FormControl,
+  FormLabel,
+  FormHelperText,
+  FormControlLabel,
+  RadioGroup,
+  Radio,
 } from "@mui/material";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import DeleteIcon from "@mui/icons-material/Delete";
@@ -101,6 +107,32 @@ function App() {
             specific subsets, weights and styles. MUI default typography
             configuration only relies on 300, 400, 500, and 700 font weights.
           </Typography>
+          <FormControl>
+            <FormLabel>Which framework would you like to use?</FormLabel>
+            <RadioGroup row defaultValue="laravel" name="radio-button-group">
+              <FormControlLabel
+                value="bootstrap"
+                control={<Radio />}
+                label="Bootstrap"
+              />
+              <FormControlLabel
+                value="laravel"
+                control={<Radio />}
+                label="Laravel"
+              />
+              <FormControlLabel
+                value="react"
+                control={<Radio />}
+                label="React"
+              />
+              <FormControlLabel value="vue" control={<Radio />} label="Vue" />
+              <FormControlLabel
+                value="orther"
+                control={<Radio />}
+                label="Other"
+              />
+            </RadioGroup>
+          </FormControl>
         </Grid>
       </Grid>
       <Stack direction="row" spacing={5} pt={5} pl={5}>
