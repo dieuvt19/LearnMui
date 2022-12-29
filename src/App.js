@@ -14,13 +14,16 @@ import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import DeleteIcon from "@mui/icons-material/Delete";
 import SendIcon from "@mui/icons-material/Send";
 import "./App.css";
+import HomeIcon from "@mui/icons-material/Home";
+import CssIcon from "@mui/icons-material/Css";
 
 function App() {
   return (
     <div className="App">
       <AppBar position="static">
         <Toolbar>
-          <Typography variant="h5" sx={{ flexGrow: 1 }} align="left">
+          <HomeIcon fontSize="large" />
+          <Typography variant="h5" sx={{ flexGrow: 1, pl: 2 }} align="left">
             MUI-5
           </Typography>
           <Button color="inherit">Login</Button>
@@ -57,8 +60,9 @@ function App() {
             </AccordionSummary>
             <AccordionDetails>
               <Typography>
-                This is CSS framework to build website quickly. Bootstrap is
-                very easy to learn.
+                This is
+                <CssIcon fontSize="large" /> framework to build website quickly.
+                Bootstrap is very easy to learn.
               </Typography>
             </AccordionDetails>
           </Accordion>
