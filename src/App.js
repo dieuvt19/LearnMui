@@ -1,14 +1,17 @@
 import { Stack } from "@mui/material";
 import "./App.css";
+import Leftcontent from "./components/Leftcontent";
+import Maincontent from "./components/Maincontent";
+import Rightcontent from "./components/Rightcontent";
 
 function App() {
   return (
     <div className="App">
-      <h1>Stacks</h1>
-      <Stack direction="row" justifyContent="space-between" p={5} mt={5}>
-        <p>This is a tutorial about Stack in MUI 5</p>
-        <p>Thank you for watching</p>
-        <p>Please like and subscribe my channel</p>
+      <h1>Flexbox</h1>
+      <Stack direction="row" justifyContent="space-between">
+        <Leftcontent />
+        <Maincontent />
+        <Rightcontent />
       </Stack>
     </div>
   );
