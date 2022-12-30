@@ -1,24 +1,18 @@
-import "./App.css";
-import Home from "./components/Home";
-import Translate from "./components/Translate";
-import ChipExample from "./pages/chip/chip";
-import Create from "./components/Create";
-import Summary from "./components/Summary";
+import React from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
+import Home from "./pages/Home";
+import Create from "./pages/Create";
 
 function App() {
   return (
-    // <CustomerProvider>
-    <BrowserRouter>
-      <Routes>
-        <Route path="/" exact element={<Home />} />
-        <Route path="/create" element={<Create />} />
-        <Route path="/translate" element={<Translate />} />
-        <Route path="/summary" element={<Summary />} />
-        <Route path="/chip-example" element={<ChipExample />} />
-      </Routes>
-    </BrowserRouter>
-    // </CustomerProvider>
+    <div>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" exact element={<Home />} />
+          <Route path="/create" element={<Create />} />
+        </Routes>
+      </BrowserRouter>
+    </div>
   );
 }
 
