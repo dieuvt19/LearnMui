@@ -1,6 +1,7 @@
 import Container from "@mui/material/Container";
 import { Grid, Paper, Typography } from "@mui/material";
 import { useEffect, useState } from "react";
+import CustomerCard from "../components/CustomerCard";
 
 function Home() {
   const [customers, setCustomers] = useState([]);
@@ -23,19 +24,7 @@ function Home() {
         {customers &&
           customers.map((customer) => (
             <Grid item xs={4} key={customer.id}>
-              <Paper>
-                <Typography
-                  variant="h5"
-                  color="initial"
-                  align="center"
-                  gutterBottom
-                >
-                  {customer.name}
-                </Typography>
-                <Typography variant="h6" color="initial" align="justify">
-                  {customer.details}
-                </Typography>
-              </Paper>
+              <CustomerCard customer={customer} />
             </Grid>
           ))}
       </Grid>
