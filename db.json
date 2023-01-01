@@ -20,13 +20,6 @@
       "gender": "female",
       "rating": 5,
       "id": 3
-    },
-    {
-      "name": "JB",
-      "details": "He is from Canada",
-      "gender": "male",
-      "rating": 4,
-      "id": 4
     }
   ]
 }

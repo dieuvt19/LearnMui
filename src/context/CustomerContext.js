@@ -14,11 +14,18 @@ export const CustomerProvider = ({ children }) => {
 
     fetchData();
   }, []);
+
+  const deleteCustomer = async (id) => {
+    await fetch(`http://localhost:3001/customers/${id}`, { method: "DELETE" });
+    setCustomers(customers.filter((customer) => customer.id !== id));
+  };
   return (
-    <CustomerContext.Provider value={{ customers }}>
+    <CustomerContext.Provider value={{ customers, deleteCustomer }}>
       {children}
     </CustomerContext.Provider>
   );
 };
+
+// export { deleteCustomer };
 
 export default CustomerContext;

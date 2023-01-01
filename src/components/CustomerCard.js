@@ -6,13 +6,16 @@ import {
   IconButton,
   Typography,
 } from "@mui/material";
+import { useContext } from "react";
+import CustomerContext from "../context/CustomerContext";
 
 export default function CustomerCard({ customer }) {
+  const { deleteCustomer } = useContext(CustomerContext);
   return (
     <Card>
       <CardHeader
         action={
-          <IconButton>
+          <IconButton onClick={() => deleteCustomer(customer.id)}>
             <DeleteIcon />
           </IconButton>
         }
