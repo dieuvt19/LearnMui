@@ -1,20 +1,12 @@
 import Container from "@mui/material/Container";
-import { Grid, Paper, Typography } from "@mui/material";
-import { useEffect, useState } from "react";
+import { Grid, Typography } from "@mui/material";
 import CustomerCard from "../components/CustomerCard";
+import { useContext } from "react";
+import CustomerContext from "../context/CustomerContext";
 
 function Home() {
-  const [customers, setCustomers] = useState([]);
-  useEffect(() => {
-    const fetchData = async () => {
-      const response = await fetch("http://localhost:3001/customers");
-      const responseJSON = await response.json();
-
-      setCustomers(responseJSON);
-    };
-
-    fetchData();
-  }, []);
+  const { customers } = useContext(CustomerContext);
+  console.log(customers);
   return (
     <Container maxWidth="lg">
       <Typography variant="h3" gutterBottom align="center">
