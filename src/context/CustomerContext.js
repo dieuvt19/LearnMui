@@ -19,8 +19,21 @@ export const CustomerProvider = ({ children }) => {
     await fetch(`http://localhost:3001/customers/${id}`, { method: "DELETE" });
     setCustomers(customers.filter((customer) => customer.id !== id));
   };
+
+  const createCustomer = async ({ name, details, gender, rating }) => {
+    const response = await fetch("http://localhost:3001/customers", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ name, details, gender, rating }),
+    });
+
+    const data = response.json();
+    setCustomers([data, ...customers]);
+  };
   return (
-    <CustomerContext.Provider value={{ customers, deleteCustomer }}>
+    <CustomerContext.Provider
+      value={{ customers, deleteCustomer, createCustomer }}
+    >
       {children}
     </CustomerContext.Provider>
   );

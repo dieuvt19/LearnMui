@@ -20,6 +20,13 @@
       "gender": "female",
       "rating": 5,
       "id": 3
+    },
+    {
+      "name": "Moon",
+      "details": "cat",
+      "gender": "male",
+      "rating": 5,
+      "id": 4
     }
   ]
 }

@@ -1,19 +1,17 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import Container from "@mui/material/Container";
 import {
   Typography,
   TextField,
   Button,
   Box,
-  FormControl,
-  FormLabel,
   RadioGroup,
-  FormHelperText,
   FormControlLabel,
   Radio,
   Rating,
 } from "@mui/material";
 import SendIcon from "@mui/icons-material/Send";
+import CustomerContext from "../context/CustomerContext";
 
 function Create() {
   const [name, setName] = useState("");
@@ -22,11 +20,12 @@ function Create() {
   const [detailsError, setDetailsError] = useState(false);
   const [gender, setGender] = useState("female");
   const [rating, setRating] = useState(5);
+  const { createCustomer } = useContext(CustomerContext);
 
   const handleSubmit = (e) => {
     e.preventDefault();
     if (name && details) {
-      console.log(name, details, gender, rating);
+      createCustomer({ name, details, gender, rating });
     }
 
     if (name === "") {
