@@ -13,12 +13,14 @@ import CustomerCard from "../components/CustomerCard";
 import { useContext } from "react";
 import CustomerContext from "../context/CustomerContext";
 import InboxIcon from "@mui/icons-material/Inbox";
+import CssBaseline from "@mui/material/CssBaseline";
 
 function Home() {
   const { customers } = useContext(CustomerContext);
-  console.log(customers);
+
   return (
     <Container maxWidth="lg">
+      <CssBaseline />
       <Typography variant="h3" gutterBottom align="center">
         App to manage customers
       </Typography>

@@ -9,6 +9,7 @@ import {
 } from "@mui/material";
 import { useContext } from "react";
 import CustomerContext from "../context/CustomerContext";
+import CustomerModal from "./CustomerModal";
 
 export default function CustomerCard({ customer }) {
   const { deleteCustomer } = useContext(CustomerContext);
@@ -34,6 +35,7 @@ export default function CustomerCard({ customer }) {
         <Typography paragraph align="justify">
           {customer.details}
         </Typography>
+        <CustomerModal customer={customer} />
       </CardContent>
     </Card>
   );
