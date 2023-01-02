@@ -14,9 +14,23 @@ import { useContext } from "react";
 import CustomerContext from "../context/CustomerContext";
 import InboxIcon from "@mui/icons-material/Inbox";
 import CssBaseline from "@mui/material/CssBaseline";
+import { styled } from "@mui/system";
 
 function Home() {
   const { customers } = useContext(CustomerContext);
+  const MyDiv = styled("div")({
+    backgroundColor: "aliceblue",
+    padding: 10,
+    borderRadius: 15,
+  });
+
+  const MyTypography = styled(Typography)({
+    backgroundColor: "#52A388",
+    color: "white",
+    textAlign: "center",
+    padding: 5,
+    fontSize: "20px",
+  });
 
   return (
     <Container maxWidth="lg">
@@ -24,6 +38,7 @@ function Home() {
       <Typography variant="h3" gutterBottom align="center">
         App to manage customers
       </Typography>
+      <MyTypography>This is an app using Material UI 5</MyTypography>
       <Box sx={{ display: "flex" }}>
         <Box>
           <Drawer variant="permanent" anchor="left">
@@ -42,7 +57,9 @@ function Home() {
             {customers &&
               customers.map((customer) => (
                 <Grid item xs={4} key={customer.id}>
-                  <CustomerCard customer={customer} />
+                  <MyDiv>
+                    <CustomerCard customer={customer} />
+                  </MyDiv>
                 </Grid>
               ))}
           </Grid>
