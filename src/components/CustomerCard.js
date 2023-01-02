@@ -5,6 +5,7 @@ import {
   CardContent,
   CardHeader,
   IconButton,
+  Tooltip,
   Typography,
 } from "@mui/material";
 import { useContext } from "react";
@@ -25,9 +26,11 @@ export default function CustomerCard({ customer }) {
       <Avatar {...stringAvatar(name)} sx={{ bgcolor: "green" }} />
       <CardHeader
         action={
-          <IconButton onClick={() => deleteCustomer(customer.id)}>
-            <DeleteIcon />
-          </IconButton>
+          <Tooltip title="Delete customer" placement="right">
+            <IconButton onClick={() => deleteCustomer(customer.id)}>
+              <DeleteIcon />
+            </IconButton>
+          </Tooltip>
         }
         title={customer.name}
       />
