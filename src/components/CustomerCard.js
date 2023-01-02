@@ -1,9 +1,11 @@
+import { CheckBox } from "@mui/icons-material";
 import DeleteIcon from "@mui/icons-material/Delete";
 import {
   Avatar,
   Card,
   CardContent,
   CardHeader,
+  Checkbox,
   IconButton,
   Tooltip,
   Typography,
@@ -11,6 +13,10 @@ import {
 import { useContext } from "react";
 import CustomerContext from "../context/CustomerContext";
 import CustomerModal from "./CustomerModal";
+import FavoriteBorder from "@mui/icons-material/FavoriteBorder";
+import Favorite from "@mui/icons-material/Favorite";
+import ThumbDownIcon from "@mui/icons-material/ThumbDown";
+import ThumbDownOutlinedIcon from "@mui/icons-material/ThumbDown";
 
 export default function CustomerCard({ customer }) {
   const { deleteCustomer } = useContext(CustomerContext);
@@ -39,6 +45,14 @@ export default function CustomerCard({ customer }) {
           {customer.details}
         </Typography>
         <CustomerModal customer={customer} />
+        <Checkbox
+          icon={<FavoriteBorder />}
+          checkedIcon={<Favorite sx={{ color: "red" }} />}
+        />
+        <Checkbox
+          icon={<ThumbDownOutlinedIcon />}
+          checkedIcon={<ThumbDownIcon sx={{ color: "blue" }} />}
+        />
       </CardContent>
     </Card>
   );
