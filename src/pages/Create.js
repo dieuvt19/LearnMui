@@ -9,9 +9,11 @@ import {
   FormControlLabel,
   Radio,
   Rating,
+  Snackbar,
 } from "@mui/material";
 import SendIcon from "@mui/icons-material/Send";
 import CustomerContext from "../context/CustomerContext";
+import MuiAlert from "@mui/material/Alert";
 
 function Create() {
   const [name, setName] = useState("");
@@ -21,11 +23,17 @@ function Create() {
   const [gender, setGender] = useState("female");
   const [rating, setRating] = useState(5);
   const { createCustomer } = useContext(CustomerContext);
+  const [openSnackbar, setOpenSnackbar] = useState(false);
+
+  const handleClose = () => {
+    setOpenSnackbar(false);
+  };
 
   const handleSubmit = (e) => {
     e.preventDefault();
     if (name && details) {
       createCustomer({ name, details, gender, rating });
+      setOpenSnackbar(true);
     }
 
     if (name === "") {
@@ -49,7 +57,6 @@ function Create() {
             fullWidth
             required
             label="Name"
-            // value={name}
             onChange={(e) => setName(e.target.value)}
             error={nameError}
           />
@@ -59,7 +66,6 @@ function Create() {
             label="Details"
             multiline
             rows={3}
-            // value={}
             onChange={(e) => setDetails(e.target.value)}
             error={detailsError}
           />
@@ -98,6 +104,16 @@ function Create() {
           Submit
         </Button>
       </form>
+
+      <Snackbar
+        open={openSnackbar}
+        autoHideDuration={1500}
+        onClose={handleClose}
+      >
+        <MuiAlert severity="success">
+          Created new customer successfully!
+        </MuiAlert>
+      </Snackbar>
     </Container>
   );
 }
